@@ -8,7 +8,6 @@ zuul:
     api-gateway: /gateway/**
 
 server:
-  port: 8080
   compression:
     enabled: true
     mime-types: application/json,text/css,application/javascript
@@ -31,10 +30,8 @@ eureka:
 ---
 spring:
   profiles: cloud
-  zipkin:
-    baseUrl: http://tracing-server:9411
-server:
-  port: ${PORT}
+  # zipkin:
+  #   baseUrl: http://tracing-server:9411
 eureka:
   client:
     serviceUrl:
