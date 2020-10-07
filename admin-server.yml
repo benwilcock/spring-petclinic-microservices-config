@@ -1,7 +1,6 @@
 spring:
   profiles: default
 
-
 ---
 spring:
   profiles: docker
