@@ -1,6 +1,5 @@
 ﻿server:
-  port: 8761
-
+  port: 8761 
 eureka:
   instance:
     hostname: localhost
@@ -12,3 +11,12 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
+---
+server:
+  profiles: cloud
+  port: ${PORT}
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]}
+    nonSecurePort: 80
+    preferIpAddress: true
