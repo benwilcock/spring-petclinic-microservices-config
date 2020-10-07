@@ -24,13 +24,10 @@ eureka:
       defaultZone: http://discovery-server:8761/eureka/
 
 ---
----
 spring:
   profiles: cloud
-  zipkin:
-    baseUrl: http://tracing-server:9411
-server:
-  port: ${PORT}
+  # zipkin:
+  #   baseUrl: http://tracing-server:9411
 eureka:
   client:
     serviceUrl:
