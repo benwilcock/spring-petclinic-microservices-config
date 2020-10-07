@@ -1,9 +1,15 @@
 ﻿server:
   port: 8761
 
+management:
+  endpoints:
+    web:
+      exposure.include: '*'
+
 eureka:
   instance:
     hostname: localhost
+    preferIpAddress: true
   # standalone mode
   client:
     registerWithEureka: false
