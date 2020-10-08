@@ -31,10 +31,10 @@ eureka:
   instance:
     hostname: ${vcap.application.uris[0]}
     nonSecurePort: 80
-    health-check-url-path: /actuator/health
+    healthCheckUrlPath: /actuator/health
     metadata-map:
       management.port: 80
-      health.path: /actuator/health
+      # health.path: /actuator/health
       applicationId: ${vcap.application.application_id}
       instanceId: ${vcap.application.instance_index}
 message: ola!
