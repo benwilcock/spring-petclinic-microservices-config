@@ -21,6 +21,7 @@ spring:
       client:
         instance:
           service-base-url: http://${vcap.application.uris[0]}
+          management-base-url: http://${vcap.application.uris[0]}
 eureka:
   client:
     serviceUrl:
