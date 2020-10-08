@@ -16,12 +16,12 @@
 ---
 spring:
   profiles: cloud
-  boot:
-    admin:
-      client:
-        instance:
-          service-base-url: http://${vcap.application.uris[0]}
-          management-base-url: http://${vcap.application.uris[0]}
+  # boot:
+  #   admin:
+  #     client:
+  #       instance:
+  #         service-base-url: http://${vcap.application.uris[0]}
+  #         management-base-url: http://${vcap.application.uris[0]}
 eureka:
   client:
     serviceUrl:
@@ -32,10 +32,7 @@ eureka:
     hostname: ${vcap.application.uris[0]}
     nonSecurePort: 80
     healthCheckUrl: http://${vcap.application.uris[0]}/actuator/health
-    # statusPageUrlPath: /actuator/info
-    # healthCheckUrlPath: /actuator/health
     metadata-map:
       management.port: 80
-      # health.path: /actuator/health
       applicationId: ${vcap.application.application_id}
       instanceId: ${vcap.application.instance_index}
