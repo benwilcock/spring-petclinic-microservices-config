@@ -1,0 +1,23 @@
+---
+spring:
+  profiles: cloud
+  # boot:
+  #   admin:
+  #     client:
+  #       instance:
+  #         service-base-url: http://${vcap.application.uris[0]}
+  #         management-base-url: http://${vcap.application.uris[0]}
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://bens-discovery-server.apps.tas.tanzu-demo.net/eureka
+    healthcheck:
+      enabled: true
+  instance:
+    hostname: ${vcap.application.uris[0]}
+    nonSecurePort: 80
+    healthCheckUrl: http://${vcap.application.uris[0]}/actuator/health
+    metadata-map:
+      management.port: 80
+      applicationId: ${vcap.application.application_id}
+      instanceId: ${vcap.application.instance_index}
