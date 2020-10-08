@@ -1,13 +1,12 @@
 ﻿eureka:
   instance:
     hostname: localhost
-    preferIpAddress: true
-  # standalone mode
   client:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
 ---
 server:
   profiles: cloud

@@ -1,9 +1,9 @@
 spring:
   profiles: default
-# eureka:
-#   instance:
-#     # enable to register multiple app instances with a random server port
-#     instance-id: ${spring.application.name}:${random.uuid}
+eureka:
+  instance:
+    # enable to register multiple app instances with a random server port
+    instance-id: ${spring.application.name}:${random.uuid}
 
 ---
 spring:
@@ -24,3 +24,8 @@ eureka:
       defaultZone: http://bens-discovery-server.apps.tas.tanzu-demo.net/eureka
     healthcheck:
       enabled: true
+  instance:
+#     # enable to register multiple app instances with a random server port
+#     instance-id: ${spring.application.name}:${random.uuid}
+    hostname: ${vcap.application.uris[0]}
+    nonSecurePort: 80
