@@ -16,6 +16,10 @@ eureka:
 ---
 spring:
   profiles: cloud
+  boot:
+    admin:
+      discovery:
+        enabled: true
   # zipkin:
   #   baseUrl: http://tracing-server:9411
 eureka:
@@ -27,3 +31,5 @@ eureka:
   instance:
     hostname: ${vcap.application.uris[0]}
     nonSecurePort: 80
+    metadataMap:
+      management.port: 80
