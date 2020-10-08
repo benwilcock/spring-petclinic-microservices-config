@@ -29,7 +29,8 @@ eureka:
     healthcheck:
       enabled: true
   instance:
+    leaseRenewalIntervalInSeconds: 10
     hostname: ${vcap.application.uris[0]}
     nonSecurePort: 80
-    metadataMap:
+    metadata-map:
       management.port: 80
