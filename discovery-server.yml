@@ -10,10 +10,10 @@
 ---
 server:
   profiles: cloud
-eureka:
-  instance:
-    hostname: ${vcap.application.uris[0]}
-    nonSecurePort: 80
-    metadata-map:
-      management.port: 80
-      health.path: /actuator/health
+# eureka:
+#   instance:
+#     hostname: ${vcap.application.uris[0]}
+#     nonSecurePort: 80
+#     metadata-map:
+#       management.port: 80
+#       health.path: /actuator/health
