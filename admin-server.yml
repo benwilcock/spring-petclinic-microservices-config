@@ -17,4 +17,4 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://bens-discovery-server.apps.tas.workload.tkglab.tanzu-demo.net/eureka
+      defaultZone: http://bens-discovery-server.apps.tas.tanzu-demo.net/eureka
