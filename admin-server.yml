@@ -24,6 +24,7 @@ spring:
   #   baseUrl: http://tracing-server:9411
 eureka:
   client:
+    registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: http://bens-discovery-server.apps.tas.tanzu-demo.net/eureka
     healthcheck:
@@ -34,3 +35,4 @@ eureka:
     nonSecurePort: 80
     metadata-map:
       management.port: 80
+      health.path: /actuator/health

@@ -29,4 +29,5 @@ eureka:
     nonSecurePort: 80
     metadata-map:
       management.port: 80
+      health.path: /actuator/health
 message: ola!
