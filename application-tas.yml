@@ -1,12 +1,8 @@
 ---
 spring:
-  profiles: cloud
-  # boot:
-  #   admin:
-  #     client:
-  #       instance:
-  #         service-base-url: http://${vcap.application.uris[0]}
-  #         management-base-url: http://${vcap.application.uris[0]}
+  profiles: tas
+  # zipkin:
+  #   baseUrl: http://tracing-server:9411
 eureka:
   client:
     serviceUrl:

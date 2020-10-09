@@ -6,14 +6,3 @@
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-
----
-server:
-  profiles: cloud
-# eureka:
-#   instance:
-#     hostname: ${vcap.application.uris[0]}
-#     nonSecurePort: 80
-#     metadata-map:
-#       management.port: 80
-#       health.path: /actuator/health
