@@ -1,8 +1,8 @@
 ---
 spring:
   profiles: tas
-  # zipkin:
-  #   baseUrl: http://tracing-server:9411
+  zipkin:
+    baseUrl: http://bens-zipkin-server.apps.tas.tanzu-demo.net
 eureka:
   client:
     serviceUrl:
