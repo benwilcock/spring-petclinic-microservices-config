@@ -7,6 +7,6 @@ spring:
         enabled: true
 eureka:
   client:
-    registryFetchIntervalSeconds: 5
+    registryFetchIntervalSeconds: 30
   instance:
-    leaseRenewalIntervalInSeconds: 10
+    leaseRenewalIntervalInSeconds: 30
