@@ -52,10 +52,10 @@ management:
     web:
       exposure:
         include: '*'
-  metrics:
-    export:
-      prometheus:
-        enabled: true
+#  metrics:
+#    export:
+#      prometheus:
+#        enabled: true
 
 ---
 spring:
