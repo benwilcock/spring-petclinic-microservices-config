@@ -13,7 +13,7 @@ spring:
   cloud:
     loadbalancer:
       ribbon:
-        enabled: true
+        enabled: false
     gateway:
       routes:
         - id: vets-service
