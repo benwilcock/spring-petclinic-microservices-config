@@ -18,3 +18,10 @@ eureka:
       management.port: 80
       applicationId: ${vcap.application.application_id}
       instanceId: ${vcap.application.instance_index}
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud: INFO
+    org.springframework.cloud.sleuth.zipkin2: TRACE
+    org.springframework.samples.petclinic: DEBUG
+    com.netflix: INFO
