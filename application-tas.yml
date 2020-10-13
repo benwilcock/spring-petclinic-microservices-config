@@ -3,6 +3,8 @@ spring:
   profiles: tas
   zipkin:
     enabled: true
+    discoveryClientEnabled: false
+    sender.type: web
     baseUrl: http://bens-zipkin-server.apps.tas.tanzu-demo.net:80
 eureka:
   client:
@@ -21,7 +23,8 @@ eureka:
 logging:
   level:
     root: INFO
-    org.springframework.cloud: INFO
-    org.springframework.cloud.sleuth.zipkin2: TRACE
+#    org.springframework.cloud: INFO
+    org.springframework.cloud.sleuth.zipkin2: DEBUG
     org.springframework.samples.petclinic: DEBUG
-    com.netflix: INFO
+    org.springframework.web.servlet.DispatcherServlet: DEBUG
+#    com.netflix: INFO
