@@ -4,8 +4,10 @@ spring:
   zipkin:
     enabled: true
     discoveryClientEnabled: false
-    sender.type: web
+    messageTimeout: 10
     baseUrl: http://bens-zipkin-server.apps.tas.tanzu-demo.net:80
+    sender:
+      type: web
 eureka:
   client:
     serviceUrl:
