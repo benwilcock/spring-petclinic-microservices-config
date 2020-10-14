@@ -34,3 +34,6 @@ spring:
             - Path=/api/customer/**
           filters:
             - StripPrefix=2
+      httpclient:
+        ssl:
+          useInsecureTrustManager: true
