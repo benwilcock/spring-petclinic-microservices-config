@@ -26,7 +26,4 @@ logging:
   level:
     root: INFO
 #    org.springframework.cloud: INFO
-    org.springframework.cloud.sleuth.zipkin2: DEBUG
-    org.springframework.samples.petclinic: DEBUG
-    org.springframework.web.servlet.DispatcherServlet: DEBUG
-#    com.netflix: INFO
+#    org.springframework.cloud.sleuth.instrument.web: DEBUG
