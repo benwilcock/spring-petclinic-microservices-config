@@ -1,6 +1,5 @@
 ---
 spring:
-  profiles: tas
   boot:
     admin:
       discovery:
