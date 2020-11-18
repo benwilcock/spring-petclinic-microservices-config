@@ -22,8 +22,7 @@ eureka:
       management.port: 80
       applicationId: ${vcap.application.application_id}
       instanceId: ${vcap.application.instance_index}
-logging:
-  level:
-    root: INFO
+#logging:
+#  level:
 #    org.springframework.cloud: INFO
 #    org.springframework.cloud.sleuth.instrument.web: DEBUG

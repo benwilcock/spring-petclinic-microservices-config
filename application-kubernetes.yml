@@ -1,0 +1,28 @@
+---
+spring:
+  profiles: kubernetes
+  zipkin:
+    enabled: true
+    discoveryClientEnabled: false
+    messageTimeout: 10
+    baseUrl: http://zipkin-server-service.default.svc.cluster.local:9411
+    sender:
+      type: web
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server-service.default.svc.cluster.local:8761/eureka
+    healthcheck:
+      enabled: true
+#  instance:
+#    hostname: ${vcap.application.uris[0]}
+#    nonSecurePort: 80
+#    healthCheckUrl: http://${vcap.application.uris[0]}/actuator/health
+#    metadata-map:
+#      management.port: 80
+#      applicationId: ${vcap.application.application_id}
+#      instanceId: ${vcap.application.instance_index}
+#logging:
+#  level:
+#    org.springframework.cloud: INFO
+#    org.springframework.cloud.sleuth.instrument.web: DEBUG
