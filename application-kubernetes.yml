@@ -14,7 +14,8 @@ eureka:
       defaultZone: http://discovery-server-service.default.svc.cluster.local:8761/eureka
     healthcheck:
       enabled: true
-#  instance:
+  instance:
+    preferIpAddress: true
 #    hostname: ${vcap.application.uris[0]}
 #    nonSecurePort: 80
 #    healthCheckUrl: http://${vcap.application.uris[0]}/actuator/health
