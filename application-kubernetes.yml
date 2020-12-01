@@ -1,9 +1,9 @@
 spring:
   zipkin:
     enabled: true
+    baseUrl: http://tracing-server-service.default.svc.cluster.local:9411
     discoveryClientEnabled: false
     messageTimeout: 10
-    baseUrl: http://tracing-server-service.default.svc.cluster.local:9411
     sender:
       type: web
 eureka:
