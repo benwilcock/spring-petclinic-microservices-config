@@ -1,0 +1,4 @@
+# Register using IP Address
+eureka:
+  instance:
+    preferIpAddress: true
