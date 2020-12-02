@@ -1,11 +1,12 @@
+# Settings given to ALL applications started under the KUBERNETES profile
 spring:
   zipkin:
-    enabled: true
-    baseUrl: http://tracing-server-service.default.svc.cluster.local:9411
     discoveryClientEnabled: false
     messageTimeout: 10
     sender:
       type: web
+
+# Register using IP Address
 eureka:
   instance:
     preferIpAddress: true

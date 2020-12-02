@@ -1,4 +1,5 @@
-﻿eureka:
+﻿# Settings for the DISCOVERY server.
+eureka:
   instance:
     hostname: localhost
   client:

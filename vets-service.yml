@@ -1,4 +1,10 @@
-﻿vets:
+﻿# Settings for the VETS-SERVICE application.
+vets:
   cache:
     ttl: 60
     heap-size: 100
+spring:
+  profiles:
+    active: production
+  cache:
+    cache-names: vets

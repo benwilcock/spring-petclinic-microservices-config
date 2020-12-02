@@ -1,65 +1,56 @@
-# COMMON APPLICATION PROPERTIES
+# COMMON APPLICATION PROPERTIES given to ALL applications
 
+# Server specifics
 server:
-  # start services on random port by default
-  port: ${PORT}
-  # The stop processing uses a timeout which provides a grace period during which existing requests will be allowed to complete but no new requests will be permitted
-  shutdown: graceful
+  port: ${PORT} # Use the PORT Given in the PORT environment variable
+  shutdown: graceful # The stop processing uses a timeout which provides a grace period during which existing requests will be allowed to complete but no new requests will be permitted
 
-# embedded database init, supports mysql too trough the 'mysql' spring profile
+# Discovery endpoint
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_SERVER_URI} # Use the DISCOVERY_SERVER_URI environment variable as the endpoint (e.g. http://localhost:8761/eureka)
+
+# Spring Boot settings
 spring:
   zipkin:
     enabled: true
-    baseUrl: http://localhost:9411
+    baseUrl: ${TRACING_SERVER_URI} # Use the TRACING_SERVER_URI environment variable as the endpoint (e.g. http://localhost:9411)
   datasource:
     schema: classpath*:db/hsqldb/schema.sql
     data: classpath*:db/hsqldb/data.sql
-  sleuth:
-    sampler:
-      probability: 1.0
   cloud:
+    refresh:
+      refreshable: false # Temporary hack required by the Spring Boot 2 / Spring Cloud Finchley branch. Waiting issue https://github.com/spring-projects/spring-boot/issues/13042
     config:
-      # Allow the microservices to override the remote properties with their own System properties or config file
-      allow-override: true
-      # Override configuration with any local property source
-      override-none: true
+      allow-override: true # Allow the microservices to override the remote properties with their own System properties or config file
+      override-none: true # Override configuration with any local property source
   jpa:
     open-in-view: false
     hibernate:
       ddl-auto: none
 
-# Set the actuator port to match the application's
-management.port: ${PORT}
-# Spring Boot 1.5 makes actuator secure by default
-management.security.enabled: false
-# Enable all Actuators and not only the two available by default /health and /info starting Spring Boot 2.0
-management.endpoints.web.exposure.include: "*"
-# Show detailed health
-management.endpoint.health.show-details: ALWAYS
-
-# Temporary hack required by the Spring Boot 2 / Spring Cloud Finchley branch
-# Waiting issue https://github.com/spring-projects/spring-boot/issues/13042
-spring.cloud.refresh.refreshable: false
-
-# Logging
-logging.level.root: INFO
-
-# Metrics
+# Actuator settings
 management:
+  port: ${PORT} # Set the actuator PORT to match the application's PORT as set in the ENV
+  security:
+    enabled: false # Spring Boot 1.5 makes actuator secure by default
+  endpoints:
+    web:
+      exposure.include: '*' # Enable all Actuators and not only the two available by default /health and /info starting Spring Boot 2.0
   endpoint:
+    health:
+      show-details: ALWAYS # Show detailed health
     metrics:
       enabled: true
     prometheus:
       enabled: true
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-#  metrics:
-#    export:
-#      prometheus:
-#        enabled: true
 
+# Logging levels
+logging:
+  level.root: INFO
+
+# For when you switch to using regular MYSQL rather than H2
 ---
 spring:
   profiles: mysql

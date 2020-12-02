@@ -1,17 +1,12 @@
----
+# Settings for all applications started under the TAS profile.
 spring:
-  profiles: tas
   zipkin:
-    enabled: true
     discoveryClientEnabled: false
     messageTimeout: 10
-    baseUrl: http://bens-zipkin-server.apps.tas.tanzu-demo.net:80
     sender:
       type: web
 eureka:
   client:
-    serviceUrl:
-      defaultZone: http://bens-discovery-server.apps.tas.tanzu-demo.net/eureka
     healthcheck:
       enabled: true
   instance:
@@ -22,7 +17,3 @@ eureka:
       management.port: 80
       applicationId: ${vcap.application.application_id}
       instanceId: ${vcap.application.instance_index}
-#logging:
-#  level:
-#    org.springframework.cloud: INFO
-#    org.springframework.cloud.sleuth.instrument.web: DEBUG
