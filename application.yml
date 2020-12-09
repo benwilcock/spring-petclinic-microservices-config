@@ -23,8 +23,8 @@ spring:
     refresh:
       refreshable: false # Temporary hack required by the Spring Boot 2 / Spring Cloud Finchley branch. Waiting issue https://github.com/spring-projects/spring-boot/issues/13042
     config:
-      allow-override: true # Allow the microservices to override the remote properties with their own System properties or config file
-      override-none: true # Override configuration with any local property source
+      allowOverride: true # Allow the microservices to override the remote properties with their own System properties or config file
+      overrideNone: true # Override configuration with any local property source
   jpa:
     open-in-view: false
     hibernate:
