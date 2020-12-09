@@ -47,8 +47,8 @@ management:
       enabled: true
 
 # Logging levels
-logging:
-  level.root: INFO
+#logging:
+#  level.root: INFO
 
 # For when you switch to using regular MYSQL rather than H2
 ---
