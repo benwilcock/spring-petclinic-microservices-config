@@ -50,14 +50,4 @@ management:
 #logging:
 #  level.root: INFO
 
-# For when you switch to using regular MYSQL rather than H2
----
-spring:
-  profiles: mysql
-  datasource:
-    schema: classpath*:db/mysql/schema.sql
-    data: classpath*:db/mysql/data.sql
-    url: jdbc:mysql://localhost:3306/petclinic?useSSL=false
-    username: root
-    password: petclinic
-    initialization-mode: ALWAYS
+
