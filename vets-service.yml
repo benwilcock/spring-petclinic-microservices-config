@@ -8,3 +8,7 @@ spring:
     active: production
   cache:
     cache-names: vets
+eureka:
+  instance:
+    hostname: ${VETS_SERVICE_SERVICE_PORT_8083_TCP_ADDR}
+    nonSecurePort: 8083
