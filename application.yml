@@ -12,6 +12,8 @@ eureka:
       defaultZone: ${DISCOVERY_SERVER_URI} # Use the DISCOVERY_SERVER_URI environment variable as the endpoint (e.g. http://localhost:8761/eureka)
     healthcheck:
       enabled: true
+  instance:
+    preferIpAddress: true # Included here in the main application.yml as a workaround for https://github.com/spring-cloud/spring-cloud-config/issues/1783     
 
 # Spring Boot settings
 spring:
