@@ -1,12 +1,13 @@
 # Settings given to ALL applications started under the KUBERNETES profile
-spring:
-  zipkin:
-    discoveryClientEnabled: false
-    messageTimeout: 10
-    sender:
-      type: web
 
 # Register using IP Address
 eureka:
   instance:
     preferIpAddress: true
+
+#spring:
+#  zipkin:
+#    discoveryClientEnabled: false
+#    messageTimeout: 10
+#    sender:
+#      type: web

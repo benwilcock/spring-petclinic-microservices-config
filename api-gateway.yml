@@ -6,10 +6,10 @@ server:
     mime-types: application/json,text/css,application/javascript
     min-response-size: 2048
 
-eureka:
-  sleuth:
-    reactor:
-      decorate-on-each: false
+#eureka:
+#  sleuth:
+#    reactor:
+#      decorate-on-each: false
 
 # Internationalization
 #spring.messages.basename: messages/messages
