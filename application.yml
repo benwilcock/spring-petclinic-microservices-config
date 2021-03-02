@@ -40,19 +40,19 @@ management:
   port: ${PORT} # Set the actuator PORT to match the application's PORT as set in the ENV
   security:
     enabled: false # Spring Boot 1.5 makes actuator secure by default
-  endpoints:
-    enabled-by-default: true
-    shutdown:
-      enabled: true
-    web:
-      exposure.include: '*' # Enable all Actuators and not only the two available by default /health and /info starting Spring Boot 2.0
-  endpoint:
-    health:
-      show-details: always # Show detailed health
-    metrics:
-      enabled: true
-    prometheus:
-      enabled: true
+#  endpoints:
+#    enabled-by-default: true
+#    shutdown:
+#      enabled: true
+#    web:
+#      exposure.include: '*' # Enable all Actuators and not only the two available by default /health and /info starting Spring Boot 2.0
+#  endpoint:
+#    health:
+#      show-details: always # Show detailed health
+#    metrics:
+#      enabled: true
+#    prometheus:
+#      enabled: true
 
 # Logging levels
 #logging:
