@@ -1,6 +1,0 @@
-# Settings given to ALL applications started under the DOCKER profile
-
-# Register using IP Address
-eureka:
-  instance:
-    preferIpAddress: true # Register using IP Address
