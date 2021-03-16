@@ -49,8 +49,8 @@ management:
       show-details: ALWAYS # Show detailed health
     metrics:
       enabled: true
-    prometheus:
-      enabled: true
+#    prometheus:
+#      enabled: true
 
 # Logging levels
 #logging:
